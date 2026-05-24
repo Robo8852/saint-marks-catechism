@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #fbf6e9;
+    color: #2a1810;
+    font-family: "EB Garamond", "Cormorant Garamond", Garamond, "Palatino Linotype", Georgia, serif;
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse at top, #fff7e0 0%, #fbf6e9 40%, #f5e9c4 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .prose-orthodox {
+    @apply text-ink leading-relaxed;
+    font-size: 1.0625rem;
+  }
+  .prose-orthodox p {
+    @apply mb-4 text-justify;
+    hyphens: auto;
+  }
+  .prose-orthodox h2 {
+    @apply font-serif text-burgundy text-2xl mt-10 mb-3 pb-1 border-b border-gold;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+  }
+  .prose-orthodox h3 {
+    @apply font-serif text-burgundy-deep text-xl mt-6 mb-2;
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+  }
+  .prose-orthodox ul {
+    @apply list-disc pl-6 mb-4 space-y-1;
+  }
+  .prose-orthodox strong {
+    @apply text-burgundy-deep font-semibold;
+  }
+  .prose-orthodox em {
+    @apply italic text-burgundy;
+  }
+  .prose-orthodox a {
+    @apply text-burgundy underline decoration-gold underline-offset-2 hover:text-burgundy-deep;
+  }
+
+  /* Drop cap for first paragraph of a section */
+  .drop-cap::first-letter {
+    @apply font-display text-burgundy float-left;
+    font-size: 4.5rem;
+    line-height: 0.85;
+    padding: 6px 10px 0 0;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>May 23rd Catechism — On Holy Baptism</title>
+<style>
+  @page {
+    size: Letter;
+    margin: 0.85in 0.9in 0.95in 0.9in;
+    @top-center {
+      content: "☦  May 23rd Catechism  ☦";
+      font-family: 'EB Garamond', 'Garamond', 'Cormorant Garamond', serif;
+      font-size: 9pt;
+      color: #6b1e1e;
+      letter-spacing: 0.18em;
+    }
+    @bottom-center {
+      content: counter(page);
+      font-family: 'EB Garamond', 'Garamond', serif;
+      font-size: 10pt;
+      color: #8a6a23;
+    }
+  }
+  @page:first {
+    margin: 0;
+    @top-center { content: none; }
+    @bottom-center { content: none; }
+  }
+
+  :root {
+    --burgundy: #6b1e1e;
+    --burgundy-deep: #4a1414;
+    --gold: #b8860b;
+    --gold-bright: #d4a017;
+    --gold-pale: #f5e9c4;
+    --ink: #2a1810;
+    --parchment: #fbf6e9;
+    --parchment-edge: #f0e3c2;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', 'Cormorant Garamond', 'Garamond', 'Palatino Linotype', Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ===== COVER PAGE ===== */
+  .cover {
+    page-break-after: always;
+    height: 100vh;
+    width: 100vw;
+    background:
+      radial-gradient(ellipse at center, #fff7e0 0%, #f5e9c4 45%, #e6d39a 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.8in;
+    border: none;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    inset: 0.35in;
+    border: 3px double var(--burgundy);
+    pointer-events: none;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    inset: 0.5in;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+  }
+  .cover-corner {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-color: var(--burgundy);
+  }
+  .cover-corner.tl { top: 0.5in; left: 0.5in; border-top: 4px solid var(--burgundy); border-left: 4px solid var(--burgundy); }
+  .cover-corner.tr { top: 0.5in; right: 0.5in; border-top: 4px solid var(--burgundy); border-right: 4px solid var(--burgundy); }
+  .cover-corner.bl { bottom: 0.5in; left: 0.5in; border-bottom: 4px solid var(--burgundy); border-left: 4px solid var(--burgundy); }
+  .cover-corner.br { bottom: 0.5in; right: 0.5in; border-bottom: 4px solid var(--burgundy); border-right: 4px solid var(--burgundy); }
+
+  .cover-cross {
+    margin-bottom: 0.4in;
+  }
+
+  .cover-greek {
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+    font-size: 14pt;
+    color: var(--burgundy);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.15in;
+    font-style: italic;
+  }
+
+  .cover-title {
+    font-family: 'Cinzel', 'Trajan Pro', 'Cormorant Garamond', serif;
+    font-size: 42pt;
+    color: var(--burgundy-deep);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+    margin: 0.1in 0 0.1in 0;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  .cover-subtitle {
+    font-size: 18pt;
+    color: var(--burgundy);
+    font-style: italic;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4in;
+  }
+
+  .cover-divider {
+    width: 60%;
+    margin: 0.2in auto;
+    text-align: center;
+    color: var(--gold);
+    font-size: 18pt;
+    letter-spacing: 0.5em;
+  }
+
+  .cover-meta {
+    margin-top: 0.5in;
+    font-size: 13pt;
+    color: var(--burgundy);
+    line-height: 1.8;
+  }
+  .cover-meta .label {
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
+    color: #8a6a23;
+    font-size: 10pt;
+  }
+  .cover-meta .value {
+    font-style: italic;
+    font-size: 14pt;
+  }
+
+  .cover-verse {
+    position: absolute;
+    bottom: 1.2in;
+    left: 1in;
+    right: 1in;
+    text-align: center;
+    font-style: italic;
+    color: var(--burgundy);
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+  .cover-verse .citation {
+    display: block;
+    margin-top: 0.1in;
+    font-size: 10pt;
+    color: #8a6a23;
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
+    font-style: normal;
+  }
+
+  /* ===== CONTENT PAGES ===== */
+  .content {
+    max-width: 100%;
+  }
+
+  h1.section-title {
+    font-family: 'Cinzel', 'Trajan Pro', 'Cormorant Garamond', serif;
+    color: var(--burgundy-deep);
+    font-size: 20pt;
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin: 0.4in 0 0.1in 0;
+    page-break-after: avoid;
+    font-weight: 600;
+  }
+
+  .section-ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 16pt;
+    letter-spacing: 0.4em;
+    margin: 0 0 0.25in 0;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', 'Garamond', serif;
+    color: var(--burgundy);
+    font-size: 15pt;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    margin: 0.3in 0 0.08in 0;
+    page-break-after: avoid;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+  }
+
+  p {
+    margin: 0 0 0.12in 0;
+    text-align: justify;
+    hyphens: auto;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .lead p:first-of-type::first-letter {
+    font-family: 'Cinzel', 'Trajan Pro', serif;
+    color: var(--burgundy);
+    font-size: 48pt;
+    float: left;
+    line-height: 0.85;
+    padding: 6px 8px 0 0;
+    font-weight: 600;
+  }
+
+  blockquote {
+    margin: 0.15in 0.3in;
+    padding: 0.1in 0.2in;
+    border-left: 3px solid var(--gold);
+    background: rgba(245, 233, 196, 0.4);
+    font-style: italic;
+    color: #3d2818;
+    font-size: 11.5pt;
+  }
+  blockquote .citation {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    font-variant: small-caps;
+    font-size: 10pt;
+    color: var(--burgundy);
+    letter-spacing: 0.1em;
+    margin-top: 0.08in;
+  }
+
+  .scripture {
+    margin: 0.15in 0.2in;
+    padding: 0.12in 0.25in;
+    background: linear-gradient(to right, rgba(184, 134, 11, 0.08), rgba(184, 134, 11, 0.02));
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    font-size: 11.5pt;
+    color: var(--burgundy-deep);
+  }
+  .scripture .ref {
+    display: block;
+    font-variant: small-caps;
+    font-size: 10pt;
+    color: var(--burgundy);
+    letter-spacing: 0.12em;
+    margin-bottom: 0.05in;
+    text-align: center;
+  }
+  .scripture .text {
+    font-style: italic;
+    text-align: center;
+  }
+
+  .dialogue {
+    margin: 0.1in 0.25in;
+    padding: 0.08in 0.15in;
+    background: rgba(245, 233, 196, 0.3);
+    border-left: 2px solid var(--burgundy);
+    font-size: 11pt;
+  }
+  .dialogue .speaker {
+    font-variant: small-caps;
+    font-weight: 600;
+    color: var(--burgundy);
+    letter-spacing: 0.08em;
+  }
+
+  .section-break {
+    text-align: center;
+    color: var(--gold);
+    font-size: 14pt;
+    letter-spacing: 0.5em;
+    margin: 0.25in 0;
+  }
+
+  .end-mark {
+    text-align: center;
+    margin: 0.5in 0 0.2in 0;
+    color: var(--burgundy);
+  }
+  .end-mark .doxology {
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
+    font-size: 11pt;
+    color: var(--burgundy);
+    margin-top: 0.15in;
+  }
+  .end-mark .greek {
+    font-style: italic;
+    color: #8a6a23;
+    font-size: 11pt;
+    margin-top: 0.08in;
+  }
+
+  em.term { font-style: italic; color: var(--burgundy); }
+  strong { color: var(--burgundy-deep); font-weight: 600; }
+
+  .toc {
+    page-break-after: always;
+    padding-top: 0.5in;
+  }
+  .toc h1 {
+    font-family: 'Cinzel', 'Trajan Pro', serif;
+    color: var(--burgundy-deep);
+    font-size: 22pt;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.05in;
+  }
+  .toc-ornament { text-align:center; color: var(--gold); letter-spacing: 0.4em; margin-bottom: 0.4in; }
+  .toc ol {
+    list-style: none;
+    counter-reset: tocitem;
+    padding: 0;
+    max-width: 5.5in;
+    margin: 0 auto;
+  }
+  .toc li {
+    counter-increment: tocitem;
+    margin: 0.15in 0;
+    padding-bottom: 0.05in;
+    border-bottom: 1px dotted var(--gold);
+    font-size: 13pt;
+    color: var(--burgundy-deep);
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .toc li::before {
+    content: counter(tocitem, upper-roman) ".  ";
+    color: var(--gold);
+    font-weight: 600;
+    font-variant: small-caps;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== COVER PAGE ========== -->
+<section class="cover">
+  <div class="cover-corner tl"></div>
+  <div class="cover-corner tr"></div>
+  <div class="cover-corner bl"></div>
+  <div class="cover-corner br"></div>
+
+  <div class="cover-cross">
+    <!-- Three-bar Eastern Orthodox cross in SVG -->
+    <svg width="120" height="180" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#e8c460"/>
+          <stop offset="50%" stop-color="#b8860b"/>
+          <stop offset="100%" stop-color="#8a6a23"/>
+        </linearGradient>
+      </defs>
+      <!-- Vertical post -->
+      <rect x="54" y="6" width="12" height="170" fill="url(#goldGrad)" stroke="#6b1e1e" stroke-width="1.2"/>
+      <!-- Top titulus bar (INRI) -->
+      <rect x="38" y="22" width="44" height="8" fill="url(#goldGrad)" stroke="#6b1e1e" stroke-width="1.2"/>
+      <!-- Main crossbar -->
+      <rect x="14" y="56" width="92" height="14" fill="url(#goldGrad)" stroke="#6b1e1e" stroke-width="1.2"/>
+      <!-- Slanted footrest (suppedaneum) -->
+      <polygon points="22,118 98,108 98,122 22,132" fill="url(#goldGrad)" stroke="#6b1e1e" stroke-width="1.2"/>
+      <!-- IC XC NI KA inscriptions -->
+      <text x="30" y="50" font-family="serif" font-size="9" fill="#6b1e1e" font-weight="bold">IC</text>
+      <text x="78" y="50" font-family="serif" font-size="9" fill="#6b1e1e" font-weight="bold">XC</text>
+      <text x="28" y="92" font-family="serif" font-size="9" fill="#6b1e1e" font-weight="bold">NI</text>
+      <text x="80" y="92" font-family="serif" font-size="9" fill="#6b1e1e" font-weight="bold">KA</text>
+    </svg>
+  </div>
+
+  <div class="cover-greek">&#x2767; &#160; ΟΡΘΟΔΟΞΙΑ &#160; &#x2767;</div>
+
+  <h1 class="cover-title">May 23rd<br/>Catechism</h1>
+
+  <div class="cover-subtitle">On Holy Baptism &mdash; Session II</div>
+
+  <div class="cover-divider">&#x2767; &#x2042; &#x2767;</div>
+
+  <div class="cover-meta">
+    <div><span class="label">Subject</span><br/>
+      <span class="value">The Canons of the Church &amp; the Reception of Converts</span></div>
+    <div style="margin-top: 0.25in;"><span class="label">Reading</span><br/>
+      <span class="value">Council of Carthage &middot; St. Cyprian &middot; St. Basil</span></div>
+  </div>
+
+  <div class="cover-verse">
+    &ldquo;Unless one is born of water and the Spirit, he cannot enter the kingdom of God.&rdquo;
+    <span class="citation">&mdash; John 3:5</span>
+  </div>
+</section>
+
+<!-- ========== TABLE OF CONTENTS ========== -->
+<section class="toc">
+  <h1>Contents</h1>
+  <div class="toc-ornament">&#x2767; &#x2042; &#x2767;</div>
+  <ol>
+    <li>Of Infants and the Council of Carthage</li>
+    <li>Augustine, Total Depravity, and the Free Will</li>
+    <li>The Scripture, the Apostles, and the Witness of the Spirit</li>
+    <li>The Innocence and Understanding of Infants</li>
+    <li>The Reception of Converts &mdash; The Canons</li>
+    <li>Whose Baptism Is Received, and Whose Is Not</li>
+    <li>Of Marriage, Mystery, and the Mind of the Church</li>
+    <li>Tradition, Ethnicity, and the One Body</li>
+    <li>The Boundaries of the Church</li>
+  </ol>
+</section>
+
+<!-- ========== CONTENT ========== -->
+<div class="content">
+
+<!-- ===== I ===== -->
+<h1 class="section-title">I &middot; Of Infants and the Council of Carthage</h1>
+<div class="section-ornament">&#x2767; &#x2042; &#x2767;</div>
+
+<div class="lead">
+<p>Last week we looked at chapter twelve on Holy Baptism. We are not yet moving on. When people come into the Orthodox Church as converts, sometimes a baptism received outside the Church is accepted as valid, and sometimes it is not. To take up that question rightly we must consult the canons themselves &mdash; and before treating reception, we must first speak of <em class="term">infant baptism</em>.</p>
+</div>
+
+<p>The first canon to consider comes from the <strong>Council of Carthage in 419 A.D.</strong>, in fifth-century North Africa. It reads in part:</p>
+
+<blockquote>
+Likewise it seemed good that whosoever denies that infants newly from their mother&rsquo;s womb should be baptized, or says that baptism is for the remission of sins, but that they derive from Adam no original sin which needs to be removed by the labor of regeneration &mdash; from which the conclusion follows that in them the form of baptism for the remission of sins is to be understood as false and not true &mdash; let him be anathema.
+<span class="citation">&mdash; Council of Carthage, A.D. 419</span>
+</blockquote>
+
+<p>Anyone who says infants should not be baptized, or that they have no sins requiring remission, is rejected by the Church. The canon grounds itself in the Apostle&rsquo;s words:</p>
+
+<div class="scripture">
+  <span class="ref">Romans 5:12</span>
+  <span class="text">&ldquo;By one man sin entered into the world, and death through sin, and so death passed upon all men, for that all have sinned.&rdquo;</span>
+</div>
+
+<p>The Church teaches that every human being conceived and born according to the course of nature is born into flesh corrupted by sin. This is what is called <em class="term">original sin</em>, the primal sin, or in Orthodoxy more often <em class="term">ancestral sin</em>. Though an infant is not consciously or willfully sinning, sin is nevertheless present and must be cleansed. This is why we baptize infants. They need a new birth. As our Lord says:</p>
+
+<div class="scripture">
+  <span class="ref">John 3:5&ndash;6</span>
+  <span class="text">&ldquo;That which is born of the flesh is flesh; and that which is born of the Spirit is spirit&hellip; unless one is born of water and the Spirit, he cannot enter the kingdom of God.&rdquo;</span>
+</div>
+
+<p>This has always been understood in the Orthodox Church as referring primarily to baptism &mdash; for our Lord names <strong>water and the Spirit</strong> &mdash; and it holds true even for infants.</p>
+
+<div class="section-break">&#x2767; &#x2767; &#x2767;</div>
+
+<!-- ===== II ===== -->
+<h1 class="section-title">II &middot; Augustine, Total Depravity, and the Free Will</h1>
+<div class="section-ornament">&#x2767; &#x2042; &#x2767;</div>
+
+<p>This canon also reaches into the very heart of the difference between Orthodoxy and other Christian traditions concerning the doctrine of sin itself. <strong>Augustine of Hippo</strong> &mdash; a bishop in North Africa, near Carthage, a little before this period &mdash; declared that all of humanity is nothing more than a <em class="term">damned mass</em>. According to Augustine, if infants are not baptized and they die, there is no hope of heaven, for all of humanity born by natural generation into sinful flesh is damned.</p>
+
+<p>He is the wellspring of what we now call <strong>total depravity</strong> and <strong>double predestination</strong>:</p>
+
+<ul>
+  <li><strong>Total depravity</strong> &mdash; no good remains in fallen man.</li>
+  <li><strong>Double predestination</strong> &mdash; God has chosen, before all ages, who shall go to heaven and who to hell; the totally depraved can contribute nothing to their salvation.</li>
+</ul>
+
+<p>From this stream Luther later wrote <em class="term">The Bondage of the Will</em> against Erasmus: the human will, being totally depraved, is bound within sin and can do nothing to choose the good. But if a man is totally depraved, how is he saved? Only God can save him. Then why are some not saved? Because God chose not to save them. The corollary follows that those destined for heaven cannot lose it, no matter what they do &mdash; the &ldquo;once saved, always saved&rdquo; mentality.</p>
+
+<p>What such teaching wholly discounts is what the Fathers of the Church call the faculty of <em class="term">self-determination</em> &mdash; the free will. As one of the students observed: it feels like a spit in the face to regeneration. If a man may live as he pleases and still be saved, what is the point of being a Christian at all? And what is the point if God has already chosen you for hell? It is very bleak.</p>
+
+<p>This was the ruling ideology that came from Augustine. Yet Augustine was an Orthodox bishop, and when he began to write in this vein, other Orthodox bishops, priests, and teachers contradicted him. Late in life Augustine published his <em class="term">Retractations</em>, retracting many of his earlier false ideas &mdash; but he never retracted these. So the Orthodox Church has never received them.</p>
+
+<h2>The Orthodox Answer</h2>
+
+<p>For Orthodoxy, the very fact that God created us means we are not totally depraved, for <strong>God does not create evil</strong>. As St. John Chrysostom plainly says: if you take away free will, and assert total depravity, what is the point of God promising to punish wrongdoing and to reward righteousness? Without a choice, man is a robot &mdash; or a pet, or a slave.</p>
+
+<p>In Orthodoxy, no one is totally depraved. We are <em class="term">stained</em> with sin and terminally ill with it &mdash; but at some point we must join our will to the will of God. We can say <strong>no</strong> to God; we can also say <strong>yes</strong>. That &ldquo;yes&rdquo; is itself the action of God&rsquo;s grace, the power of the Gospel bringing back to full life what God created within us: the ability to say <em class="term">Amen</em> to God.</p>
+
+<p>This is where the Virgin Mary stands as our pattern. She is not sinless &mdash; but when Gabriel came to her and told her she would be the Mother of God, her answer was: <em class="term">&ldquo;Let it be to me as you have said.&rdquo;</em> She simply said Amen. She agreed with him. <strong>That is faith.</strong></p>
+
+<p>And our entire spiritual life now is a struggle &mdash; a struggle against the temptation to say no, that we might say yes to God, do His will, and grow in faith and hope and love.</p>
+
+<blockquote>
+You do not agree with a lie; you agree with the truth. It is a consolation to know how ancient this teaching is &mdash; nothing new under the sun. This has been debated since long before Christianity; the Greeks and Romans wrestled with it also.
+</blockquote>
+
+<div class="section-break">&#x2767; &#x2767; &#x2767;</div>
+
+<!-- ===== III ===== -->
+<h1 class="section-title">III &middot; The Scripture, the Apostles, and the Witness of the Spirit</h1>
+<div class="section-ornament">&#x2767; &#x2042; &#x2767;</div>
+
+<p>Returning to baptism: infants are born in flesh stained with sin, subject to corruption and death &mdash; but does that mean they are beyond the love of God? The Orthodox answer is <strong>no</strong>. (The Roman Catholics, for several reasons, invented purgatory; for an unbaptized infant they could hope only for that.)</p>
+
+<p>God is sovereign, and may do whatever He wills &mdash; this is true. But God has <strong>revealed</strong> His will to us, and so we know what He is up to. The danger comes when we approach Scripture with what we already think it says, and find only what we are looking for. This was the very tragedy of the Pharisees: how was it possible for the Word of God to stand before them in the flesh, and they did not know Him? They had the Old Testament memorized. They had no idea what it meant. Not until Christ appeared to Saul on the road to Damascus did everything click into place for him &mdash; and then suddenly the Scriptures made sense.</p>
+
+<h2>The Witness of Peter</h2>
+
+<p>Consider what St. Peter writes:</p>
+
+<div class="scripture">
+  <span class="ref">2 Peter 1:16&ndash;21</span>
+  <span class="text">&ldquo;For we did not follow cunningly devised fables&hellip; but were eyewitnesses of His majesty. &hellip; And we have the prophetic word confirmed, which you do well to heed as a light that shines in a dark place&hellip; knowing this first, that no prophecy of Scripture is of any private interpretation, for prophecy never came by the will of man, but holy men of God spoke as they were moved by the Holy Spirit.&rdquo;</span>
+</div>
+
+<p>The verb is literally <em class="term">as they were carried</em> by the Holy Spirit. How do we know Peter&rsquo;s words are inspired alongside the prophets&rsquo;? Because <strong>Peter is an eyewitness</strong>; he is a personal witness to the glory of God in the face of Christ. He saw it on Tabor at the Transfiguration. The reason these books are all in the Bible is that they all bear witness to the same thing &mdash; the prophets and the apostles all saw, witnessed, and experienced the same Christ.</p>
+
+<p>What this means for Orthodoxy is that <strong>inspiration is not restricted to the books of the Bible</strong>. Every Christian who experiences the same glory of Christ knows that it is true, because he has the same experience.</p>
+
+<h2>Paul According to Peter</h2>
+
+<div class="scripture">
+  <span class="ref">2 Peter 3:14&ndash;16</span>
+  <span class="text">&ldquo;&hellip;as also our beloved brother Paul, according to the wisdom given to him, has written to you, as also in all his epistles &hellip; in which are some things hard to understand, which untaught and unstable people twist to their own destruction, as they do also the rest of the Scriptures.&rdquo;</span>
+</div>
+
+<p>St. Peter places the letters of St. Paul plainly alongside the Scriptures. And when we read Paul, we find he had the same experience as Peter &mdash; not on Tabor but on the road to Damascus, and again in 2 Corinthians caught up to the third heaven. <em>All</em> the prophets and apostles speak of beholding the face of God. For us, the face of God is the Son of God in the flesh &mdash; Christ. To know Christ is everything. And the only way to know His commandments is to <strong>do them</strong>, in faith.</p>
+
+<div class="section-break">&#x2767; &#x2767; &#x2767;</div>
+
+<!-- ===== IV ===== -->
+<h1 class="section-title">IV &middot; The Innocence and Understanding of Infants</h1>
+<div class="section-ornament">&#x2767; &#x2042; &#x2767;</div>
+
+<p>Two psalms speak to the capacity of infants to know God:</p>
+
+<div class="scripture">
+  <span class="ref">Psalm 18:7 (LXX)</span>
+  <span class="text">&ldquo;The law of the Lord is blameless, converting souls; the testimony of the Lord is trustworthy, making <em>infants</em> wise.&rdquo;</span>
+</div>
+
+<div class="scripture">
+  <span class="ref">Psalm 118:130 (LXX)</span>
+  <span class="text">&ldquo;The revelation of Your words gives light; it causes <em>infants</em> to understand.&rdquo;</span>
+</div>
+
+<p>The common English renderings use the word <em>children</em>, but the better translation is <em class="term">infants</em>. What does this tell us about an infant&rsquo;s ability to know and to believe in God?</p>
+
+<p>Do newborns understand their mother and father? Of course. They know their mother. They know their father&rsquo;s voice. There are sonograms of twins reacting to one another in the womb. And the supreme example is <strong>St. John the Baptist</strong> &mdash; six months in his mother&rsquo;s womb, when Mary greeted Elizabeth, he leapt for joy. He knew who Jesus was and answered Him.</p>
+
+<div class="scripture">
+  <span class="ref">2 Timothy 3:14&ndash;15</span>
+  <span class="text">&ldquo;&hellip;continue in the things which you have learned and been assured of, knowing from whom you have learned them, and that from <em>infancy</em> you have known the Holy Scriptures&hellip;&rdquo;</span>
+</div>
+
+<p>The Greek word is <em class="term">ἀπὸ βρέφους</em> &mdash; <em>apo brephous</em> &mdash; &ldquo;from infancy.&rdquo; <em>Brephos</em> refers not only to a newborn but also to a child still in the womb. This is why our Lord says: <em>unless you turn and become as a little child, you shall never enter the kingdom.</em></p>
+
+<div class="section-break">&#x2767; &#x2767; &#x2767;</div>
+
+<!-- ===== V ===== -->
+<h1 class="section-title">V &middot; The Reception of Converts &mdash; The Canons</h1>
+<div class="section-ornament">&#x2767; &#x2042; &#x2767;</div>
+
+<p>Now to the canons that govern the reception of converts and the acknowledgement of baptisms performed outside the Orthodox Church. The relevant canon reads:</p>
+
+<blockquote>
+Those who from the heretics come over to Orthodoxy, and to the number of those who should be saved, we receive according to the following order and custom. <em>Arians, Macedonians, Novatians</em> who called themselves <em class="term">Kithari</em> (&ldquo;the pure ones&rdquo;), <em>Aristari</em> (&ldquo;the best ones&rdquo;), <em>Tessareskaidekatitai</em> (the &ldquo;Fourteenthers&rdquo;), <em>Apollinarians</em>&hellip; we receive on their presentation of certificates and on their anathematizing every heresy which does not hold as does the Holy Apostolic Church of God. Then, first of all, we anoint them with the Holy Chrism on their foreheads, eyes, nostrils, mouth, and ears, and as we seal them we say: &ldquo;<em>The seal of the gift of the Holy Spirit.</em>&rdquo;
+</blockquote>
+
+<p>What we call this in the Orthodox Church is <strong>Chrismation</strong>. If these are received by chrismation alone, what does that presume? <em>That they have already been baptized</em> &mdash; and the Church accepts that baptism.</p>
+
+<h2>A Glossary of the Heresies</h2>
+
+<ul>
+  <li><strong>Novatians</strong> &mdash; an early schism teaching that there was no hope of repentance for those who sinned after baptism, nor any restoration for those who lapsed under persecution. They called themselves &ldquo;the pure ones.&rdquo;</li>
+  <li><strong>Fourteenthers</strong> (<em>Tessareskaidekatitai</em>) &mdash; they kept Pascha on the 14th of Nisan, the date of the Jewish Passover.</li>
+  <li><strong>Apollinarians, Arians, Macedonians</strong> &mdash; varied errors concerning the Person of Christ and the Holy Spirit.</li>
+</ul>
+
+<h2>Those Who Must Be Re-Baptized</h2>
+
+<blockquote>
+But concerning the <em>Paulianists</em>, it has been determined by the Catholic Church that they shall by all means be re-baptized. The <em>Eunomians</em> also, who baptize in one immersion; the <em>Montanists</em> (here called the Phrygians); the <em>Sabellians</em>, who consider the Son to be the same as the Father&hellip; all the other heresies &mdash; for there are many heretics here, <strong>especially those who come from the region of the Galatians</strong>.
+</blockquote>
+
+<p>(&ldquo;Especially those from Galatia&rdquo; &mdash; one wonders what the local reputation was.) The Paulianists, followers of Paul of Samosata, held a wholly heretical doctrine of the Holy Trinity, and their baptism reflected their theology. The Montanists baptized &ldquo;in the name of the Father, and of the Son, and of <em>Montanus</em>,&rdquo; for they held their founder to be the Holy Spirit. They had changed the very name of God. Therefore the Church declared: <em>their baptism is no baptism</em>.</p>
+
+<h2>Reception of the Gentile Heretics</h2>
+
+<blockquote>
+&hellip;all of their members who are desirous of coming to the Orthodox faith we receive <em>as Gentiles</em>. On the first day we make them Christians; on the second, catechumens; on the third we exorcise them, at the same time breathing upon their faces and ears; and thus we initiate them, and have them spend time in the church and hear the Scriptures, and then we baptize them.
+</blockquote>
+
+<p>The <em>Manichaeans</em>, <em>Valentinians</em>, and <em>Marcionites</em> &mdash; the dualists and Gnostics &mdash; were not Christians at all and were received as pagans. Then, after their baptism and chrismation, they became partakers of Holy Communion.</p>
+
+<div class="section-break">&#x2767; &#x2767; &#x2767;</div>
+
+<!-- ===== VI ===== -->
+<h1 class="section-title">VI &middot; Whose Baptism Is Received, and Whose Is Not</h1>
+<div class="section-ornament">&#x2767; &#x2042; &#x2767;</div>
+
+<p><strong>St. Cyprian</strong> takes the strictest line: he does not care who the schismatics or heretics are &mdash; none of them have baptism. If they have departed from the Orthodox Church, they have departed from the Holy Spirit; and if they do not have the Holy Spirit, how could they possibly baptize?</p>
+
+<p><strong>St. Basil</strong>, writing in the latter half of the fourth century, takes a different approach &mdash; not in disagreement with St. Cyprian, but in pastoral application. Cyprian wrote in the heat of the Decian persecution, when schism within the Church at its most critical hour could not be tolerated. Basil, surveying the long list of heresies, says: sometimes we must relax the <em class="term">strictness</em> in order to acknowledge that the Holy Spirit may indeed be working there, and we do not wish to stamp Him out &mdash; rather, to encourage people to receive what God has given them, and to bring it to its proper end.</p>
+
+<p>This is what the Church does to this day. Where people are baptized in water in the name of the Father, Son, and Holy Spirit, as part of a Christian community confessing the Holy Trinity and the true Person of Christ, the Church recognizes that it was in fact the Holy Spirit who led them. That baptism is generally accepted &mdash; but the convert is then <strong>chrismated</strong> upon entering the true Church, for baptism and chrismation always belong together.</p>
+
+<h2>The Two Approaches in a Word</h2>
+
+<p>This is called the principle of <em class="term">economia</em> &mdash; from the Greek <em class="term">οἰκονομία</em>, &ldquo;the household management.&rdquo; Economia means: <em>you do that which contributes to their salvation</em>, without insisting upon the strictest legal definition. The opposite principle, the strict letter, is called <em class="term">akribeia</em>.</p>
+
+<p>So when I came into the Church, I was not re-baptized &mdash; I had been baptized at three weeks old &mdash; but I was chrismated. And I was not re-married, for my wife and I were already married. Mormon baptism, by contrast, is not received in Orthodoxy: although it is performed in water and in the names of the Trinity, the Mormon doctrine of God denies the Holy Trinity outright.</p>
+
+<p>The lesson is one of <strong>discernment</strong>, not of carelessness.</p>
+
+<div class="section-break">&#x2767; &#x2767; &#x2767;</div>
+
+<!-- ===== VII ===== -->
+<h1 class="section-title">VII &middot; Of Marriage, Mystery, and the Mind of the Church</h1>
+<div class="section-ornament">&#x2767; &#x2042; &#x2767;</div>
+
+<p>Consider the implication had we insisted otherwise on marriage. If a family came into the Church &mdash; husband, wife, and children &mdash; and we said their marriage was no marriage, what would we be saying of their children? That they were illegitimate? Of course not. There is a recognition that marriages can occur, even among the unbaptized, because <strong>marriage is built into us by God</strong>. For the same reason, even non-Christian peoples generally know that adultery is wrong &mdash; you do not need to be a Christian to know it.</p>
+
+<p>But when one becomes Orthodox, what marriage was always intended by God to be is now <em class="term">fulfilled</em> in the Church. For the Church is the Bride of Christ, and Christ is the Bridegroom &mdash; and now the home becomes a little church, a manifestation of the Kingdom of God.</p>
+
+<h2>The Church Grants No Divorces</h2>
+
+<p>A common error: the Church does not <em>grant</em> divorces. The Church <em>acknowledges</em> when a divorce has occurred, but she does not give permission to divorce. Whenever it is said that the Church &ldquo;grants&rdquo; one, what is usually meant is some transaction of money and paper to keep a person in good communing standing. This kind of legalism is foreign to Scripture and to the canons. It is what happened in the West among the Roman Catholics, and then in another shape among the Lutherans &mdash; Luther took one legal system and replaced it with another. And on it has gone to forty-three thousand denominations and counting.</p>
+
+<h2>The Mystery of Communion</h2>
+
+<p>According to Roman Catholic theology, when the priest pronounces the words of institution over the bread and wine &mdash; when he speaks them rightly, by virtue of an <em class="term">indelible character</em> received in ordination &mdash; the gifts are changed; and the bell is rung at that moment.</p>
+
+<p>In the Orthodox Church, we do indeed say the words of institution &mdash; <em>&ldquo;On the night in which He was betrayed&hellip; Take, eat&hellip;&rdquo;</em> &mdash; but then comes the <em class="term">Epiclesis</em>, the <em>calling down</em>: <em>&ldquo;Send down Your Holy Spirit upon us and upon these gifts here offered&hellip;&rdquo;</em> The bread and wine are changed into the Body and Blood of Christ <strong>not</strong> because the priest has pronounced the right incantation, but because the <strong>Holy Spirit</strong> changes them. And how do we know the Holy Spirit does this? Because the Holy Spirit dwells in the Church &mdash; and we know we are the Church, the Body of Christ.</p>
+
+<blockquote>
+It is not magic. It is not about saying the right words. It is the energetic procession of the Holy Spirit Himself, dwelling in the Church.
+</blockquote>
+
+<div class="section-break">&#x2767; &#x2767; &#x2767;</div>
+
+<!-- ===== VIII ===== -->
+<h1 class="section-title">VIII &middot; Tradition, Ethnicity, and the One Body</h1>
+<div class="section-ornament">&#x2767; &#x2042; &#x2767;</div>
+
+<p>After the fall of Constantinople to the Turks in 1453, much of the Orthodox East lived under the Ottoman yoke for some four hundred years. There was not only an attempt to suppress the Faith, but to stamp out the distinct peoples themselves. The Orthodox response was to fuse the two: <em>to be Russian is to be Orthodox; to be Greek is to be Orthodox; to be Serbian is to be Orthodox.</em> Faith and culture were welded together for the sake of preserving both.</p>
+
+<p>But <strong>no one is born Orthodox</strong>. Tertullian &mdash; an early writer, Orthodox in the first half of his life before he lapsed into Montanism &mdash; said it plainly: <em class="term">&ldquo;Christians are made, not born.&rdquo;</em></p>
+
+<p>This is the perennial challenge of Orthodoxy in America. Is the church to be a foreign embassy for some particular ethnic culture, or is it the <strong>Body of Christ</strong>, the communion of the Holy Trinity and of one another? This is precisely the question of <strong>Acts 15</strong>: must one become a Jew, keeping the Mosaic law, in order to be a Christian? The Apostles&rsquo; answer was a resounding <em>no</em> &mdash; the same faith is given to the Gentiles as to the Jews; they receive the same Holy Spirit.</p>
+
+<p>Our primary task is not to perpetuate any cultural agenda. It is to become followers of Christ. We may love the festivals, the cherubim, the holubtsi, the varenyky &mdash; but the absence of these makes us no less Orthodox. <strong>Tribalism</strong> &mdash; called in Greek <em class="term">phyletism</em> &mdash; was formally condemned at an Orthodox council in Constantinople in 1872. Yet the symptom is still very much alive.</p>
+
+<div class="section-break">&#x2767; &#x2767; &#x2767;</div>
+
+<!-- ===== IX ===== -->
+<h1 class="section-title">IX &middot; The Boundaries of the Church</h1>
+<div class="section-ornament">&#x2767; &#x2042; &#x2767;</div>
+
+<p>What of communion in the Roman Catholic, Lutheran, or Presbyterian churches? Is it false, and not the true Body of Christ? We say only that it is <strong>outside the Church</strong>, and therefore <em class="term">dubious</em>. There are denominations that go out of their way to deny that it is the Body of Christ at all. We do not.</p>
+
+<p>Christ delivered to the Apostles the true faith and the manner of its practice. They received it and handed it on to the next generation, who received it and handed it on in turn. This is <em class="term">Tradition</em>. If it is the tradition of Christ, it is the same from the beginning to the present. But what happens if one departs from it? Then it is no longer the same &mdash; and to depart from the tradition of Christ is, by the very action, to be no longer in possession of it.</p>
+
+<p>And yet hear the words of our Lord:</p>
+
+<div class="scripture">
+  <span class="ref">Mark 9:38&ndash;41</span>
+  <span class="text">&ldquo;Teacher, we saw someone who does not follow us casting out demons in Your name, and we forbade him because he does not follow us. But Jesus said, Do not forbid him, for no one who works a miracle in My name can soon afterward speak evil of Me. <strong>For he who is not against us is on our side.</strong>&rdquo;</span>
+</div>
+
+<p>And against this stands the saying:</p>
+
+<div class="scripture">
+  <span class="ref">Matthew 12:30</span>
+  <span class="text">&ldquo;<strong>He who is not with Me is against Me</strong>, and he who does not gather with Me scatters abroad.&rdquo;</span>
+</div>
+
+<p>How do both make sense? Because one is either going toward Christ or not. In Mark, the man was casting out demons <em>in Christ&rsquo;s name</em> &mdash; he was on the right path, moving in the right direction, and our Lord did not discount his work. In Matthew, the Pharisees had accused Christ Himself of being possessed by Satan &mdash; they had set themselves <em>against</em> Him.</p>
+
+<h2>The Mind of the Church</h2>
+
+<p>This is the approach of the Orthodox Church. We do not categorically condemn anyone simply for not being quote-unquote &ldquo;Orthodox.&rdquo; The Orthodox response is: <strong>let us first figure out what Orthodox means for ourselves.</strong> Let us look to ourselves before we presume to judge others. But we do know the parameters of the faith. We do know how a person becomes a Christian.</p>
+
+<p>Where the Holy Spirit is working, He works to <em class="term">call all into unity</em> in the one Body of Christ. The Church does not say, &ldquo;We acknowledge your baptism &mdash; carry on as you are.&rdquo; She says, &ldquo;If the Holy Spirit is working in you, He is calling you home.&rdquo;</p>
+
+<div class="end-mark">
+  <div style="font-size: 28pt; color: var(--burgundy); letter-spacing: 0.3em;">&#x2767; &#x2020; &#x2767;</div>
+  <div class="doxology">Glory to the Father, and to the Son, and to the Holy Spirit,<br/>now and ever and unto the ages of ages. Amen.</div>
+  <div class="greek">Δόξα Πατρὶ καὶ Υἱῷ καὶ Ἁγίῳ Πνεύματι.</div>
+</div>
+
+</div>
+
+</body>
+</html>
